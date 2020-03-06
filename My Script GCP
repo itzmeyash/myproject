@@ -1,0 +1,5 @@
+GCP Folder Creation 
+
+gcloud alpha resource-manager folders create \
+> --display-name=FileName\ Rewards \
+> --folder=Number 
