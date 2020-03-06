@@ -1,0 +1,13 @@
+User Data. 
+
+Get-MsolUser –All | Export-CSV C:\WOW\azueuserlist.csv -NoTypeInformation
+
+Password Policy 
+
+Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+
+Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+
+Get-MsolPasswordPolicy -DomainName contoso.com
+
+https://stackoverflow.com/questions/44855500/powershell-get-users-lastpasswordchangetimestamp-using-azuread-module
