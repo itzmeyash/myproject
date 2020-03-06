@@ -1,14 +1,20 @@
-GCP Folder Creation 
+#GCP Folder Creation 
 
 gcloud alpha resource-manager folders create \
 > --display-name=FileName\ Rewards \
 > --folder=Number 
 
 
-GCP Compute List . 
+#GCP Compute List . 
 
 gcloud alpha resources list --filter="@type:compute.instances" --format="csv(hostname,id,name,description,canIpForward,
 creationTimestamp,disk.deviceName,disk.source,disk.type,disk.license,disk.guestOsFeature.type,machineType,
 networkInterface.accessConfig.externalIp,networkInterface.accessConfig.externalIp.networkTier,networkInterface.
 ipAddress,networkInterface.name,networkInterface.network,networkInterface.subnetwork,
 sourceMachineImage,status,statusMessage,tags.tag,serviceAccount.email,serviceAccount.scope,zone,labels)" >
+
+
+#GCP Project List. 
+
+gcloud alpha resources list --filter="@type:cloudresourcemanager.projects -name(sys)" \
+--format="csv(name,createTime,labels,lifecycleState,parent.id, parent.type, projectId, projectNumber)"
