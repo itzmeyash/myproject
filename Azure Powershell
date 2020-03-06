@@ -1,0 +1,22 @@
+##Deletion of Azure VM (Copy in Single Line)
+
+Select the Subscription: Get-AzContext-->Change the subscription to req one: \
+Select-AzSubscription -SubscriptionName CORPPROD--> Give the VM name and command: \
+Remove-AzVM -Name azwodaisp00001-->Enter resource group Name: ResourceGroupName: corp-prod-oda-aae
+
+##Azure Subcription Login 
+
+ Select-AzSubscription -SubscriptionName CORPPROD
+ 
+##Azure Resource Deletion 
+ 
+ Select-AzSubscription -SubscriptionName CORPUAT-->Remove-AzResourceGroup -Name "corp-uat-oda-aae"-->Y
+ 
+##Azure Basic Commands
+ 
+az account list --output table
+az account set --subscription "CORPPROD"
+az vm create --subscription "My Demos" --resource-group MyGroup --name NewVM --image Ubuntu
+Get-AzContext
+
+##
