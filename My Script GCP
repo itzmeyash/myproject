@@ -3,3 +3,8 @@ GCP Folder Creation
 gcloud alpha resource-manager folders create \
 > --display-name=FileName\ Rewards \
 > --folder=Number 
+
+
+GCP Compute List . 
+
+Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
